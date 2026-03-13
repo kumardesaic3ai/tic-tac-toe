@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C3 AI at Davos 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: #191919;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      padding: 0 268px;
+      gap: 0;
+    }
+
+    .nav-logo img {
+      height: 58px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      margin-left: auto;
+      margin-right: 32px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.36px;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { opacity: 0.75; }
+
+    .nav-search {
+      margin-right: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-search img {
+      width: 29px;
+      height: 29px;
+    }
+
+    .nav-cta {
+      border: 2px solid #fff;
+      height: 72px;
+      width: 168px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .nav-cta:hover { background: rgba(255,255,255,0.1); }
+
+    .nav-cta a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.36px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      height: 734px;
+      position: relative;
+      overflow: hidden;
+      background: #d8d8d8;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 268px;
+      top: 188px;
+      max-width: 1127px;
+    }
+
+    .hero-title {
+      font-size: 92px;
+      font-weight: 700;
+      line-height: 96px;
+      letter-spacing: -2.88px;
+      color: #191919;
+      margin-bottom: 30px;
+    }
+
+    .hero-date {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.72px;
+      color: #1a1a1a;
+      margin-bottom: 44px;
+    }
+
+    .hero-description {
+      font-size: 20px;
+      line-height: 1.2;
+      color: #1a1a1a;
+      max-width: 725px;
+    }
+
+    .hero-description p + p { margin-top: 16px; }
+
+    /* ── EVENTS ── */
+    .events {
+      background: #f7f8fa;
+      padding: 0 205px;
+    }
+
+    .event-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      min-height: 200px;
+      padding: 28px 63px;
+      border-bottom: 1px solid #d9d9d9;
+    }
+
+    .event-row:last-child { border-bottom: none; }
+
+    .event-info { flex: 1; }
+
+    .event-day {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.54px;
+      text-transform: uppercase;
+    }
+
+    .event-time {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.54px;
+      margin-bottom: 10px;
+    }
+
+    .tuesday  { color: #e3008c; }
+    .wednesday { color: #0076de; }
+    .thursday { color: #09b300; }
+
+    .event-type {
+      font-size: 20px;
+      font-weight: 400;
+      color: #8c8c8c;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .event-type img {
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .event-title {
+      font-size: 35px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      line-height: 1.1;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+    }
+
+    .event-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .event-more img {
+      width: 17.5px;
+      height: 17.5px;
+    }
+
+    .event-action { flex-shrink: 0; }
+
+    .btn-outline-dark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 233px;
+      height: 65px;
+      border: 1px solid #1a1a1a;
+      background: transparent;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: #1a1a1a;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-outline-dark:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: #191919;
+      padding: 100px 268px 0;
+      height: 625px;
+      overflow: hidden;
+    }
+
+    .contact-title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.9px;
+      color: #fff;
+      max-width: 519px;
+      margin-bottom: 193px;
+    }
+
+    .contact-form {
+      display: flex;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .contact-form input {
+      width: 335px;
+      height: 72px;
+      padding: 0 26px;
+      background: #fff;
+      border: none;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -0.54px;
+      outline: none;
+      flex-shrink: 0;
+    }
+
+    .contact-form input::placeholder { color: #1a1a1a; }
+
+    .btn-cta-white {
+      width: 335px;
+      height: 72px;
+      border: 2px solid #fff;
+      background: transparent;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.54px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-cta-white:hover {
+      background: #fff;
+      color: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-logo">
+      <img src="https://www.figma.com/api/mcp/asset/f8e2ea68-ad13-40a9-a0cb-1ae845d8f30e" alt="C3.ai" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">AI Software</a></li>
+      <li><a href="#">Industries</a></li>
+      <li><a href="#">Customers</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Company</a></li>
+    </ul>
+    <div class="nav-search">
+      <img src="https://www.figma.com/api/mcp/asset/33496151-cdb8-4cc4-ad94-78734bc810ae" alt="Search" />
+    </div>
+    <div class="nav-cta">
+      <a href="#">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-bg"
+         src="https://www.figma.com/api/mcp/asset/cd9c9c5f-0b8c-4030-a8eb-c393fc268631"
+         alt="Davos mountain backdrop" />
+    <div class="hero-content">
+      <h1 class="hero-title">C3 AI at Davos 2026<br>This is Enterprise AI.</h1>
+      <p class="hero-date">19–23 January, 2026&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;Davos-Klosters, Switzerland</p>
+      <div class="hero-description">
+        <p><strong>Join C3 AI in Davos</strong> to discuss how AI is transforming industries,
+           strengthening national security, advancing the energy transition, and improving
+           public services.</p>
+        <p>Hear directly from our leaders, partners, and global decision-makers on the future
+           of Enterprise AI — and how we can move from testing ideas to delivering real
+           impact.</p>
+        <p><strong>Sign up below to get early access.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events">
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-day tuesday">TUESDAY, 20 JANUARY</div>
+        <div class="event-time tuesday">7:30</div>
+        <div class="event-type">
+          EXECUTIVE BREAKFAST ROUNDTABLE WITH
+          <img src="https://www.figma.com/api/mcp/asset/b72fbff4-e0be-41c7-a5de-70d8576af484" alt="Microsoft" />
+        </div>
+        <h2 class="event-title">AI that Runs the Enterprise</h2>
+        <a class="event-more" href="#">
+          More Info
+          <img src="https://www.figma.com/api/mcp/asset/16f66002-43cf-45a8-a43a-470fea8e54c5" alt="" />
+        </a>
+      </div>
+      <div class="event-action">
+        <a class="btn-outline-dark" href="#">Secure Your Spot</a>
+      </div>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-day tuesday">TUESDAY, 20 JANUARY</div>
+        <div class="event-time tuesday">12:30</div>
+        <div class="event-type">
+          LUNCH DIALOGUE WITH
+          <img src="https://www.figma.com/api/mcp/asset/18dfbe8b-3da6-4002-a6f7-aaddc9e3dfa5" alt="PwC" />
+        </div>
+        <h2 class="event-title">The Power of Prediction in a Dynamic Economy</h2>
+        <a class="event-more" href="#">
+          More Info
+          <img src="https://www.figma.com/api/mcp/asset/16f66002-43cf-45a8-a43a-470fea8e54c5" alt="" />
+        </a>
+      </div>
+      <div class="event-action">
+        <a class="btn-outline-dark" href="#">Register Now</a>
+      </div>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-day tuesday">TUESDAY, 20 JANUARY</div>
+        <div class="event-time tuesday">14:30</div>
+        <div class="event-type">
+          COFFEE &amp; CONVERSATION WITH
+          <img src="https://www.figma.com/api/mcp/asset/8c480b99-e547-44a2-9ef1-f68b17c94882" alt="AWS" />
+        </div>
+        <h2 class="event-title">Agentic AI for Regulated Industries: Accelerating Transformation at Scale</h2>
+        <a class="event-more" href="#">
+          More Info
+          <img src="https://www.figma.com/api/mcp/asset/16f66002-43cf-45a8-a43a-470fea8e54c5" alt="" />
+        </a>
+      </div>
+      <div class="event-action">
+        <a class="btn-outline-dark" href="#">Register Now</a>
+      </div>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-day tuesday">TUESDAY, 20 JANUARY</div>
+        <div class="event-time tuesday">16:30</div>
+        <div class="event-type">TASTE OF AMERICA</div>
+        <h2 class="event-title">Premium U.S. Bourbon Tasting + Canapés</h2>
+        <a class="event-more" href="#">
+          More Info
+          <img src="https://www.figma.com/api/mcp/asset/16f66002-43cf-45a8-a43a-470fea8e54c5" alt="" />
+        </a>
+      </div>
+      <div class="event-action">
+        <a class="btn-outline-dark" href="#">Register Now</a>
+      </div>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-day wednesday">WEDNESDAY, 21 JANUARY</div>
+        <div class="event-time wednesday">12:30</div>
+        <div class="event-type">
+          LUNCH DIALOGUE WITH
+          <img src="https://www.figma.com/api/mcp/asset/49b8186d-f87f-4225-a056-232370bd300a" alt="McKinsey" />
+        </div>
+        <h2 class="event-title">Reinventing the Enterprise for the AI Era</h2>
+        <a class="event-more" href="#">
+          More Info
+          <img src="https://www.figma.com/api/mcp/asset/16f66002-43cf-45a8-a43a-470fea8e54c5" alt="" />
+        </a>
+      </div>
+      <div class="event-action">
+        <a class="btn-outline-dark" href="#">Register Now</a>
+      </div>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-day thursday">THURSDAY, 22 JANUARY</div>
+        <div class="event-time thursday">16:30</div>
+        <div class="event-type">TASTE OF AMERICA</div>
+        <h2 class="event-title">Premium U.S. Bourbon Tasting + Canapés</h2>
+        <a class="event-more" href="#">
+          More Info
+          <img src="https://www.figma.com/api/mcp/asset/16f66002-43cf-45a8-a43a-470fea8e54c5" alt="" />
+        </a>
+      </div>
+      <div class="event-action">
+        <a class="btn-outline-dark" href="#">Register Now</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <p class="contact-title">Our full program and speaker lineup will be announced soon.</p>
+    <form class="contact-form" onsubmit="return false;">
+      <input type="text" placeholder="First Name" />
+      <input type="text" placeholder="Last Name" />
+      <input type="email" placeholder="Work Email" />
+      <button class="btn-cta-white" type="submit">Meet with Us</button>
+    </form>
+  </section>
+
+</body>
+</html>
