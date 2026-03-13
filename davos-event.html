@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI that Runs the Enterprise — C3 AI at Davos 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #f7f8fa;
+      color: #1a1a1a;
+    }
+
+    /* ── EVENT CARD ── */
+    .event-card {
+      background: #fff;
+      max-width: 1512px;
+      margin: 40px auto;
+      padding: 0 63px 48px;
+      border-radius: 2px;
+      position: relative;
+      border-bottom: 1px solid #d9d9d9;
+    }
+
+    /* ── TOP ROW: meta + CTA ── */
+    .event-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 28px;
+    }
+
+    .event-meta { flex: 1; }
+
+    .event-day {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.54px;
+      color: #e3008c;
+      text-transform: uppercase;
+    }
+
+    .event-time {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.54px;
+      color: #e3008c;
+      margin-bottom: 10px;
+    }
+
+    .event-type {
+      font-size: 20px;
+      font-weight: 400;
+      color: #8c8c8c;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .event-type img {
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .event-title {
+      font-size: 35px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      line-height: 1.1;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    .event-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: #1a1a1a;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .event-more img {
+      width: 17.5px;
+      height: 17.5px;
+    }
+
+    .btn-outline-dark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 233px;
+      height: 65px;
+      border: 1px solid #1a1a1a;
+      background: transparent;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: #1a1a1a;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .btn-outline-dark:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    /* ── DESCRIPTION ── */
+    .event-description {
+      font-size: 18px;
+      line-height: 1.2;
+      color: #1a1a1a;
+      max-width: 722px;
+      margin-top: 20px;
+      margin-bottom: 36px;
+    }
+
+    .event-description strong {
+      font-weight: 700;
+    }
+
+    /* ── SPEAKERS ── */
+    .speakers {
+      display: flex;
+      gap: 35px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .speaker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .speaker-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #eee;
+    }
+
+    .speaker-info {
+      max-width: 215px;
+    }
+
+    .speaker-name {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.48px;
+      color: #1a1a1a;
+      line-height: 20px;
+      margin-bottom: 4px;
+    }
+
+    .speaker-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: #8c8c8c;
+      line-height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="event-card">
+
+    <!-- Top: event meta + CTA -->
+    <div class="event-top">
+      <div class="event-meta">
+        <div class="event-day">TUESDAY, 20 JANUARY</div>
+        <div class="event-time">7:30</div>
+        <div class="event-type">
+          EXECUTIVE BREAKFAST ROUNDTABLE WITH
+          <img src="https://www.figma.com/api/mcp/asset/f6639bf8-4b47-4a85-a10d-3c40cded78dd" alt="Microsoft" />
+        </div>
+        <h1 class="event-title">AI that Runs the Enterprise</h1>
+        <a class="event-more" href="#">
+          More Info
+          <img src="https://www.figma.com/api/mcp/asset/ad5b2658-0666-424c-afd9-1b90e46b78cd" alt="" />
+        </a>
+      </div>
+      <a class="btn-outline-dark" href="#">Secure Your Spot</a>
+    </div>
+
+    <!-- Description -->
+    <p class="event-description">
+      <strong>AI is no longer experimental — it's operational.</strong>
+      This private roundtable will explore how agentic AI is transforming enterprise
+      operations across industries, from automating supply chains to optimizing global
+      manufacturing. Participants will discuss the strategic imperatives for scaling AI
+      responsibly and securely, and the leadership required to drive lasting transformation.
+    </p>
+
+    <!-- Speakers -->
+    <div class="speakers">
+
+      <div class="speaker">
+        <img class="speaker-photo"
+             src="https://www.figma.com/api/mcp/asset/1ef953a7-8fd0-4b6d-a07f-8d8e390a35b2"
+             alt="Judson Althoff" />
+        <div class="speaker-info">
+          <div class="speaker-name">Judson Althoff</div>
+          <div class="speaker-title">CEO, Microsoft commercial business</div>
+        </div>
+      </div>
+
+      <div class="speaker">
+        <img class="speaker-photo"
+             src="https://www.figma.com/api/mcp/asset/741a449e-87fe-4ab3-91c9-ab0e98a3d7f0"
+             alt="Jim Snabe" />
+        <div class="speaker-info">
+          <div class="speaker-name">Jim Snabe</div>
+          <div class="speaker-title">Chairman, Siemens AG, Former co-CEO, SAP &amp; Former Chairman, A.P. Moller-Maersk</div>
+        </div>
+      </div>
+
+      <div class="speaker">
+        <img class="speaker-photo"
+             src="https://www.figma.com/api/mcp/asset/a0b54243-ea0e-40d2-ae47-dbe5cf0292e3"
+             alt="Jeremy Kahn" />
+        <div class="speaker-info">
+          <div class="speaker-name">Jeremy Kahn</div>
+          <div class="speaker-title">AI Editor, Fortune</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
